@@ -11,7 +11,7 @@ import matplotlib.pyplot as plt
 plt.style.use('fivethirtyeight')
 
 # %%
-df = web.DataReader('TATASTEEL', data_source='yahoo',
+df = web.DataReader('IDEA.NS', data_source='yahoo',
                     start='2012-01-01', end='2021-09-17')
 
 # %%
@@ -21,7 +21,7 @@ plt.figure(figsize=(16, 8))
 plt.title("close price history")
 plt.plot(df['Close'])
 plt.xlabel('Date', fontsize=18)
-plt.ylabel('Close Price USD ($)', fontsize=18)
+plt.ylabel('Close Price INR', fontsize=18)
 plt.show()
 
 # %%
@@ -80,7 +80,7 @@ predictions = model.predict(x_test)
 predictions = scaler.inverse_transform(predictions)
 # %%
 rmse = np.sqrt(np.mean(predictions-y_test)**2)
-rmse
+print(rmse)
 # %%
 train = data[:training_data_len]
 valid = data[training_data_len:]
@@ -88,7 +88,7 @@ valid['Predictions'] = predictions
 plt.figure(figsize=(16, 8))
 plt.title('Model')
 plt.xlabel('Date', fontsize=18)
-plt.ylabel('Close Price USD ($)', fontsize=18)
+plt.ylabel('Close Price INR', fontsize=18)
 plt.plot(train['Close'])
 plt.plot(valid[['Close', 'Predictions']])
 plt.legend(['Train', 'Val', 'Predictions'], loc='lower right')
@@ -97,7 +97,7 @@ plt.show()
 # %%
 valid
 # %%
-inc_quote = web.DataReader('TATASTEEL', data_source='yahoo',
+inc_quote = web.DataReader('IDEA.NS', data_source='yahoo',
                            start='2005-01-01', end='2021-09-17')
 new_df = inc_quote.filter(['Close'])
 last_60_days = new_df[-60:].values
