@@ -12,7 +12,7 @@ plt.style.use('fivethirtyeight')
 
 # %%
 df = web.DataReader('IDEA.NS', data_source='yahoo',
-                    start='2012-01-01', end='2021-09-17')
+                    start='2012-01-01', end='2021-09-27')
 
 # %%
 df.shape
