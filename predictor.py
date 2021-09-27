@@ -110,5 +110,3 @@ X_test = np.reshape(X_test, (X_test.shape[0], X_test.shape[1], 1))
 pred_price = model.predict(X_test)
 pred_price = scaler.inverse_transform(pred_price)
 print(pred_price)
-
-# %%
