@@ -14,6 +14,7 @@ plt.style.use('fivethirtyeight')
 df = web.DataReader('IDEA.NS', data_source='yahoo',
                     start='2012-01-01', end='2021-09-27')
 
+
 # %%
 df.shape
 # %%
@@ -95,7 +96,7 @@ plt.legend(['Train', 'Val', 'Predictions'], loc='lower right')
 plt.show()
 
 # %%
-valid
+print(valid)
 # %%
 inc_quote = web.DataReader('IDEA.NS', data_source='yahoo',
                            start='2005-01-01', end='2021-09-17')
